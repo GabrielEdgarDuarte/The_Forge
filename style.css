@@ -136,6 +136,28 @@ section {
 	}
 }
 
+#heat {
+	.bar {
+		height: 3rem;
+		margin: 2rem 0;
+		border-radius: 0.5rem;
+		background: var(--heat);
+		box-shadow: 0 0 2rem var(--heat);
+		transition: background 0.3s, box-shadow 0.3s;
+	}
+
+	input {
+		width: 100%;
+		accent-color: var(--accent);
+	}
+
+	.temperature {
+		margin-bottom: 0;
+		font-size: 1.4rem;
+		font-weight: bold;
+	}
+}
+
 footer {
 	padding: 2rem;
 	text-align: center;
