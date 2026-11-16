@@ -6,6 +6,14 @@
 	--accent: #c2410c;
 }
 
+[data-theme="dark"] {
+	--background: #161210;
+	--surface: #241d19;
+	--text: #f1e9e2;
+	--muted: #a8998e;
+	--accent: #f97316;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -49,6 +57,15 @@ header {
 		&:hover {
 			color: var(--accent);
 		}
+	}
+
+	.theme-toggle {
+		padding: 0.3rem 0.6rem;
+		border: 1px solid var(--muted);
+		border-radius: 50%;
+		background: none;
+		font-size: 1.1rem;
+		cursor: pointer;
 	}
 }
 
