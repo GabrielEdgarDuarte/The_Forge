@@ -11,6 +11,7 @@ const heatStages = [
 
 setupTheme()
 setupHeatSlider()
+setupFilters()
 
 function setupTheme() {
 	const button = document.querySelector('.theme-toggle')
@@ -39,4 +40,18 @@ function showHeat(temperature) {
 	document.querySelector('.bar').style.setProperty('--heat', stage.color)
 	document.querySelector('.temperature').textContent = `${temperature} °C · ${stage.name}`
 	document.querySelector('.heat-use').textContent = stage.use
+}
+
+function setupFilters() {
+	const buttons = document.querySelectorAll('.filters button')
+	for (const button of buttons)
+		button.addEventListener('click', () => filterCards(button, buttons))
+}
+
+function filterCards(selected, buttons) {
+	const { category } = selected.dataset
+	for (const button of buttons)
+		button.classList.toggle('active', button === selected)
+	for (const card of document.querySelectorAll('.card'))
+		card.hidden = category !== 'all' && card.dataset.category !== category
 }

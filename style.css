@@ -158,6 +158,27 @@ section {
 	}
 }
 
+.filters {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+
+	button {
+		padding: 0.4rem 1rem;
+		border: 1px solid var(--accent);
+		border-radius: 1rem;
+		background: none;
+		color: var(--accent);
+		font: inherit;
+		cursor: pointer;
+
+		&.active {
+			background: var(--accent);
+			color: var(--surface);
+		}
+	}
+}
+
 .cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
@@ -174,6 +195,10 @@ section {
 	&:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+	}
+
+	&[hidden] {
+		display: none;
 	}
 
 	.icon {
