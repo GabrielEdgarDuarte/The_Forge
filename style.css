@@ -68,6 +68,8 @@ section {
 }
 
 .hero {
+	position: relative;
+	overflow: hidden;
 	max-width: none;
 	padding: 8rem 2rem;
 	text-align: center;
@@ -84,6 +86,36 @@ section {
 	> p {
 		color: #f5c99b;
 		font-size: 1.2rem;
+	}
+}
+
+.embers span {
+	position: absolute;
+	bottom: 0;
+	left: var(--x);
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #ffb347;
+	box-shadow: 0 0 8px 2px #ff6a00;
+	opacity: 0;
+	animation: rise 4s ease-in var(--delay) infinite;
+}
+
+@keyframes rise {
+	20% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(30px, -400px) scale(0.3);
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.embers {
+		display: none;
 	}
 }
 
