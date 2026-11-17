@@ -1,5 +1,6 @@
 const MET_API = 'https://collectionapi.metmuseum.org/public/collection'
 const ARMS_AND_ARMOR = 4
+const GALLERY_SIZE = 9
 
 loadTools()
 loadGallery()
@@ -55,7 +56,7 @@ async function fetchArtworks() {
 	const response = await fetch(`${MET_API}/v1.1/search?departmentId=${ARMS_AND_ARMOR}&hasImages=true&q=sword&limit=12`)
 	const { objectIDs } = await response.json()
 	const artworks = await Promise.all(objectIDs.map(fetchArtwork))
-	return artworks.filter(artwork => artwork?.primaryImageSmall)
+	return artworks.filter(artwork => artwork?.primaryImageSmall).slice(0, GALLERY_SIZE)
 }
 
 async function fetchArtwork(id) {
@@ -74,8 +75,11 @@ function createArtworkCard({ title, culture, objectDate, primaryImageSmall, obje
 	image.alt = title
 	image.loading = 'lazy'
 
+	const name = document.createElement('strong')
+	name.textContent = title
+
 	const caption = document.createElement('p')
-	caption.textContent = `${title} · ${culture || 'Unknown origin'}, ${objectDate}`
+	caption.append(name, `${culture || 'Unknown origin'} · ${objectDate}`)
 
 	link.append(image, caption)
 	return link
