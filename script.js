@@ -15,7 +15,7 @@ setupFilters()
 
 function setupTheme() {
 	const button = document.querySelector('.theme-toggle')
-	applyTheme(localStorage.getItem('theme') ?? 'light', button)
+	applyTheme(localStorage.getItem('theme') ?? 'dark', button)
 
 	button.addEventListener('click', () => {
 		const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
