@@ -31,14 +31,18 @@ function applyTheme(theme, button) {
 
 function setupHeatSlider() {
 	const slider = document.querySelector('#heat input')
-	showHeat(slider.valueAsNumber)
-	slider.addEventListener('input', () => showHeat(slider.valueAsNumber))
+	showHeat(slider)
+	slider.addEventListener('input', () => showHeat(slider))
 }
 
-function showHeat(temperature) {
+function showHeat(slider) {
+	const temperature = slider.valueAsNumber
 	const stage = heatStages.findLast(stage => temperature >= stage.min)
+	const progress = (temperature - slider.min) / (slider.max - slider.min) * 100
+	slider.style.setProperty('--progress', `${progress}%`)
 	document.querySelector('.bar').style.setProperty('--heat', stage.color)
-	document.querySelector('.temperature').textContent = `${temperature} °C · ${stage.name}`
+	document.querySelector('.temperature').textContent = `${temperature.toLocaleString('en')} °C`
+	document.querySelector('.heat-name').textContent = `${stage.name}.`
 	document.querySelector('.heat-use').textContent = stage.use
 }
 

@@ -40,12 +40,26 @@
 		</section>
 
 		<section id="heat">
-			<h2>Reading the Heat</h2>
-			<p>Before thermometers, blacksmiths judged the temperature of steel by its colour. Each colour tells the smith what the metal is ready for. Drag the slider to heat the bar.</p>
-			<div class="bar"></div>
-			<input type="range" min="400" max="1300" step="10" value="400" aria-label="Temperature">
-			<p class="temperature"></p>
-			<p class="heat-use"></p>
+			<h2>Every colour<br>tells a story.</h2>
+			<p><strong>Before thermometers, smiths read temperature by eye.</strong> Dull red, cherry, orange, yellow, white: each glow tells the smith exactly what the steel is ready for.</p>
+			<div class="panel">
+				<h3>Reading the heat</h3>
+				<p>Drag the slider to heat the bar. Its colour changes with the temperature, just like real steel in the forge.</p>
+				<div class="bar"></div>
+				<input type="range" min="400" max="1300" step="10" value="400" aria-label="Temperature">
+				<div class="scale">
+					<span>400°</span>
+					<span>550°</span>
+					<span>650°</span>
+					<span>750°</span>
+					<span>850°</span>
+					<span>950°</span>
+					<span>1100°</span>
+					<span>1250°</span>
+				</div>
+				<p class="temperature"></p>
+				<p class="stage"><strong class="heat-name"></strong> <span class="heat-use"></span></p>
+			</div>
 		</section>
 
 		<section id="tools">
