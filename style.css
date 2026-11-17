@@ -18,6 +18,11 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 4rem;
+}
+
 body {
 	margin: 0;
 	background: var(--background);
@@ -203,6 +208,10 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
 	.embers {
 		display: none;
 	}
@@ -624,6 +633,17 @@ footer {
 
 	section {
 		padding: 2rem 1rem;
+	}
+
+	#tools,
+	#techniques {
+		--gutter: 1rem;
+	}
+
+	footer {
+		justify-content: center;
+		padding: 1.25rem 1rem;
+		text-align: center;
 	}
 
 	.hero {
