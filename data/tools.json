@@ -2,38 +2,37 @@
 	{
 		"name": "Anvil",
 		"category": "tool",
-		"icon": "⚒️",
-		"description": "A heavy block of steel that the hot metal is hammered on. Its flat face, horn and holes each have a different job."
+		"description": "A heavy block of steel that the hot metal is hammered on. Its flat face, horn and holes each have a different job.",
+		"image": "images/anvil.jpg",
+		"fit": "cover"
 	},
 	{
 		"name": "Hammer",
 		"category": "tool",
-		"icon": "🔨",
-		"description": "The smith's main tool. A cross-peen hammer, with one flat face and one wedge-shaped face, is the most common."
+		"description": "The smith's main tool. A cross-peen hammer, with one flat face and one wedge-shaped face, is the most common.",
+		"image": "https://images.metmuseum.org/CRDImages/aa/web-large/12.230.2_001feb2014.jpg",
+		"fit": "contain"
 	},
 	{
 		"name": "Tongs",
 		"category": "tool",
-		"icon": "🗜️",
-		"description": "Used to hold metal that is far too hot to touch. Smiths often forge their own tongs to fit each project."
+		"description": "Used to hold metal that is far too hot to touch. Smiths often forge their own tongs to fit each project.",
+		"image": "https://images.metmuseum.org/CRDImages/gr/web-large/DP258689-032415.jpg",
+		"fit": "contain"
 	},
 	{
 		"name": "Forge",
 		"category": "tool",
-		"icon": "🔥",
-		"description": "The fire itself, fed with coal, charcoal or gas, and blown with air to reach forging temperatures."
+		"description": "The fire itself, fed with coal, charcoal or gas, and blown with air to reach forging temperatures.",
+		"image": "https://images.metmuseum.org/CRDImages/ep/web-large/ep71.93.R.jpg",
+		"fit": "cover"
 	},
 	{
-		"name": "Quench Tank",
+		"name": "Stakes",
 		"category": "tool",
-		"icon": "🪣",
-		"description": "A container of water or oil used to cool steel quickly, which makes it hard."
-	},
-	{
-		"name": "Vise",
-		"category": "tool",
-		"icon": "🧰",
-		"description": "Holds the work steady for twisting, bending and filing. Smiths prefer a leg vise that can take hammer blows."
+		"description": "Small anvils that sit in the hardy hole of the anvil, for shaping curves and hollows.",
+		"image": "https://images.metmuseum.org/CRDImages/aa/web-large/DP-12883-001.jpg",
+		"fit": "contain"
 	},
 	{
 		"name": "Drawing Out",

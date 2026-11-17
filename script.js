@@ -11,7 +11,7 @@ const heatStages = [
 
 setupTheme()
 setupHeatSlider()
-setupFilters()
+setupCarousels()
 
 function setupTheme() {
 	const button = document.querySelector('.theme-toggle')
@@ -46,16 +46,12 @@ function showHeat(slider) {
 	document.querySelector('.heat-use').textContent = stage.use
 }
 
-function setupFilters() {
-	const buttons = document.querySelectorAll('.filters button')
-	for (const button of buttons)
-		button.addEventListener('click', () => filterCards(button, buttons))
+function setupCarousels() {
+	for (const button of document.querySelectorAll('.carousel-controls button'))
+		button.addEventListener('click', () => scrollCarousel(button))
 }
 
-function filterCards(selected, buttons) {
-	const { category } = selected.dataset
-	for (const button of buttons)
-		button.classList.toggle('active', button === selected)
-	for (const card of document.querySelectorAll('.card'))
-		card.hidden = category !== 'all' && card.dataset.category !== category
+function scrollCarousel(button) {
+	const carousel = button.closest('section').querySelector('.carousel')
+	carousel.scrollBy({ left: button.dataset.direction * carousel.clientWidth * 0.8, behavior: 'smooth' })
 }

@@ -5,17 +5,33 @@ loadTools()
 loadGallery()
 
 async function loadTools() {
-	const container = document.querySelector('.cards')
 	const response = await fetch('data/tools.json')
-	const tools = response.ok && await response.json()
-	if (tools)
-		container.replaceChildren(...tools.map(createToolCard))
+	const items = response.ok && await response.json()
+	if (!items)
+		return
+
+	const tools = items.filter(item => item.category === 'tool')
+	const techniques = items.filter(item => item.category === 'technique')
+	document.querySelector('#tools .carousel').replaceChildren(...tools.map(createToolCard))
+	document.querySelector('#techniques .cards').replaceChildren(...techniques.map(createTechniqueCard))
 }
 
-function createToolCard({ name, category, icon, description }) {
+function createToolCard({ name, description, image, fit }) {
+	const card = document.createElement('article')
+	card.className = 'tool-card'
+	card.innerHTML = `
+		<img src="${image}" alt="${name}" class="${fit}" loading="lazy">
+		<div>
+			<span class="label">Tool</span>
+			<h3>${name}</h3>
+			<p>${description}</p>
+		</div>`
+	return card
+}
+
+function createTechniqueCard({ name, icon, description }) {
 	const card = document.createElement('article')
 	card.className = 'card'
-	card.dataset.category = category
 	card.innerHTML = `
 		<span class="icon">${icon}</span>
 		<h3>${name}</h3>
