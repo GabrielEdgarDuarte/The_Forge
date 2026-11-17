@@ -601,10 +601,18 @@ section {
 }
 
 footer {
-	padding: 2rem;
-	text-align: center;
-	color: var(--muted);
-	font-size: 0.9rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding: 1.75rem max(2rem, calc((100% - 56rem) / 2));
+	border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+	color: #6e6e73;
+	font-size: 0.75rem;
+
+	p {
+		margin: 0;
+	}
 }
 
 @media (max-width: 700px) {
