@@ -3,35 +3,35 @@
 		"name": "Anvil",
 		"category": "tool",
 		"description": "A heavy block of steel that the hot metal is hammered on. Its flat face, horn and holes each have a different job.",
-		"image": "images/anvil.jpg",
+		"image": "images/anvil.webp",
 		"fit": "cover"
 	},
 	{
 		"name": "Hammer",
 		"category": "tool",
 		"description": "The smith's main tool. A cross-peen hammer, with one flat face and one wedge-shaped face, is the most common.",
-		"image": "https://images.metmuseum.org/CRDImages/aa/web-large/12.230.2_001feb2014.jpg",
+		"image": "images/hammer.webp",
 		"fit": "contain"
 	},
 	{
 		"name": "Tongs",
 		"category": "tool",
 		"description": "Used to hold metal that is far too hot to touch. Smiths often forge their own tongs to fit each project.",
-		"image": "https://images.metmuseum.org/CRDImages/gr/web-large/DP258689-032415.jpg",
+		"image": "images/tongs.webp",
 		"fit": "contain"
 	},
 	{
 		"name": "Forge",
 		"category": "tool",
 		"description": "The fire itself, fed with coal, charcoal or gas, and blown with air to reach forging temperatures.",
-		"image": "https://images.metmuseum.org/CRDImages/ep/web-large/ep71.93.R.jpg",
+		"image": "images/forge.webp",
 		"fit": "cover"
 	},
 	{
 		"name": "Stakes",
 		"category": "tool",
 		"description": "Small anvils that sit in the hardy hole of the anvil, for shaping curves and hollows.",
-		"image": "https://images.metmuseum.org/CRDImages/aa/web-large/DP-12883-001.jpg",
+		"image": "images/stakes.webp",
 		"fit": "contain"
 	},
 	{
