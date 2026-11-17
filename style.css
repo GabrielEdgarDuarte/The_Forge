@@ -112,7 +112,8 @@ section {
 		font-style: italic;
 	}
 
-	h1 {
+	h1,
+	h2 {
 		margin: 1rem 0;
 		font-size: clamp(2.8rem, 10vw, 8.25rem);
 		line-height: 1.05;
