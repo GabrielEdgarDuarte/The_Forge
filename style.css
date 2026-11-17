@@ -4,6 +4,9 @@
 	--text: #2b2420;
 	--muted: #6b5f57;
 	--accent: #c2410c;
+	--glow-core: rgba(255, 150, 50, 0.35);
+	--glow-outer: rgba(255, 90, 0, 0.15);
+	--heading-gradient: linear-gradient(#2b2420, #7c2d12 55%, #c2410c);
 }
 
 [data-theme="dark"] {
@@ -12,6 +15,9 @@
 	--text: #f5f5f7;
 	--muted: #a1a1a6;
 	--accent: #ff9f45;
+	--glow-core: rgba(255, 179, 71, 0.5);
+	--glow-outer: rgba(255, 61, 0, 0.4);
+	--heading-gradient: linear-gradient(#ffffff, #ffd9a8 55%, #ff8a3d);
 }
 
 * {
@@ -53,13 +59,16 @@ header {
 
 	nav {
 		display: flex;
-		gap: 1.75rem;
+		flex-wrap: wrap;
+		justify-content: end;
+		gap: 0.3rem 1.75rem;
 		margin-left: auto;
 	}
 
 	nav a {
 		color: var(--muted);
 		font-size: 0.8rem;
+		white-space: nowrap;
 		text-decoration: none;
 		transition: color 0.2s;
 
@@ -70,16 +79,35 @@ header {
 
 	.theme-toggle {
 		display: grid;
+		flex-shrink: 0;
 		place-items: center;
 		width: 2.1rem;
 		height: 2.1rem;
 		border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
 		border-radius: 50%;
+		padding: 0;
 		background: color-mix(in srgb, var(--text) 8%, transparent);
 		color: var(--text);
-		font-size: 1rem;
 		cursor: pointer;
+
+		svg {
+			width: 1.1rem;
+			height: 1.1rem;
+		}
 	}
+}
+
+button svg {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+[data-theme="dark"] .moon,
+[data-theme="light"] .sun {
+	display: none;
 }
 
 section {
@@ -106,15 +134,15 @@ section {
 	max-width: none;
 	padding: 9rem 2rem 10rem;
 	text-align: center;
-	color: #f5f5f7;
+	color: var(--text);
 	background:
-		radial-gradient(ellipse 50% 35% at 50% 100%, rgba(255, 179, 71, 0.5), transparent),
-		radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255, 61, 0, 0.4), transparent),
-		#050403;
+		radial-gradient(ellipse 50% 35% at 50% 100%, var(--glow-core), transparent),
+		radial-gradient(ellipse 80% 60% at 50% 100%, var(--glow-outer), transparent),
+		var(--background);
 
 	.tagline {
 		margin: 0 auto;
-		color: #ff9f45;
+		color: var(--accent);
 		font-family: 'Cormorant Garamond', Georgia, serif;
 		font-size: clamp(1.2rem, 3vw, 1.9rem);
 		font-style: italic;
@@ -127,7 +155,7 @@ section {
 		font-size: clamp(2.8rem, 10vw, 8.25rem);
 		line-height: 1.05;
 		letter-spacing: -0.03em;
-		background: linear-gradient(#ffffff, #ffd9a8 55%, #ff8a3d);
+		background: var(--heading-gradient);
 		background-clip: text;
 		color: transparent;
 	}
@@ -135,7 +163,7 @@ section {
 	> p {
 		max-width: 40rem;
 		margin: 0 auto;
-		color: #a1a1a6;
+		color: var(--muted);
 		font-size: clamp(1.1rem, 2vw, 1.5rem);
 		line-height: 1.4;
 	}
@@ -150,7 +178,7 @@ section {
 	margin-top: 2.5rem;
 
 	a {
-		color: #ff9f45;
+		color: var(--accent);
 		font-size: 1.15rem;
 		text-decoration: none;
 
@@ -447,19 +475,26 @@ section {
 	padding-inline: var(--gutter);
 
 	button {
+		display: grid;
+		place-items: center;
 		width: 2.75rem;
 		height: 2.75rem;
+		padding: 0;
 		border: none;
 		border-radius: 50%;
 		background: color-mix(in srgb, var(--text) 12%, transparent);
 		color: var(--text);
-		font-size: 1.5rem;
 		cursor: pointer;
 		transition: background 0.2s;
 
 		&:hover {
 			background: color-mix(in srgb, var(--text) 22%, transparent);
 		}
+	}
+
+	svg {
+		width: 1.25rem;
+		height: 1.25rem;
 	}
 }
 
@@ -618,7 +653,12 @@ footer {
 }
 
 @media (max-width: 700px) {
+	html {
+		scroll-padding-top: 0;
+	}
+
 	header {
+		position: static;
 		flex-direction: column;
 		gap: 0.5rem;
 		padding: 1rem;

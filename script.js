@@ -14,19 +14,13 @@ setupHeatSlider()
 setupCarousels()
 
 function setupTheme() {
-	const button = document.querySelector('.theme-toggle')
-	applyTheme(localStorage.getItem('theme') ?? 'dark', button)
+	const root = document.documentElement
+	root.dataset.theme = localStorage.getItem('theme') ?? 'dark'
 
-	button.addEventListener('click', () => {
-		const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
-		localStorage.setItem('theme', theme)
-		applyTheme(theme, button)
+	document.querySelector('.theme-toggle').addEventListener('click', () => {
+		root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'
+		localStorage.setItem('theme', root.dataset.theme)
 	})
-}
-
-function applyTheme(theme, button) {
-	document.documentElement.dataset.theme = theme
-	button.textContent = theme === 'dark' ? '☀' : '☾'
 }
 
 function setupHeatSlider() {
