@@ -35,39 +35,39 @@
 		"fit": "contain"
 	},
 	{
-		"name": "Drawing Out",
+		"name": "Drawing out",
 		"category": "technique",
-		"icon": "📏",
-		"description": "Hammering a bar to make it longer and thinner, for example to form a point or a taper."
+		"description": "Strike after strike, a thick bar grows long and thin. Patience, turned into shape.",
+		"color": "#ff5a00"
 	},
 	{
 		"name": "Upsetting",
 		"category": "technique",
-		"icon": "⬇️",
-		"description": "The opposite of drawing out: hitting the end of a bar to make it shorter and thicker."
+		"description": "The reverse of drawing out. Hammer the hot end and the bar gets shorter and thicker.",
+		"color": "#e8402a"
 	},
 	{
 		"name": "Bending",
 		"category": "technique",
-		"icon": "↪️",
-		"description": "Shaping the bar over the horn or edge of the anvil to make hooks, rings and scrolls."
+		"description": "Over the horn of the anvil, straight steel turns into hooks, rings and scrolls.",
+		"color": "#f2a93b"
 	},
 	{
-		"name": "Punching",
+		"name": "Forge welding",
 		"category": "technique",
-		"icon": "🎯",
-		"description": "Driving a punch through hot metal to make a hole, like the eye of an axe or hammer head."
+		"description": "Two pieces, almost white hot, hammered fast until they become one.",
+		"color": "#ffd45c"
 	},
 	{
 		"name": "Quenching",
 		"category": "technique",
-		"icon": "💧",
-		"description": "Heating steel to cherry red and plunging it into water or oil so it becomes very hard, but also brittle."
+		"description": "Glowing steel meets cold oil. A hiss, a cloud of steam, and the blade is hard.",
+		"color": "#4fa3d1"
 	},
 	{
 		"name": "Tempering",
 		"category": "technique",
-		"icon": "🌡️",
-		"description": "Gently reheating hardened steel to make it tougher and less brittle, so it does not shatter in use."
+		"description": "A gentle reheat after the quench. The steel turns straw, then bronze, then purple, and stops being brittle.",
+		"color": "#9b6bd6"
 	}
 ]

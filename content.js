@@ -13,7 +13,7 @@ async function loadTools() {
 	const tools = items.filter(item => item.category === 'tool')
 	const techniques = items.filter(item => item.category === 'technique')
 	document.querySelector('#tools .carousel').replaceChildren(...tools.map(createToolCard))
-	document.querySelector('#techniques .cards').replaceChildren(...techniques.map(createTechniqueCard))
+	document.querySelector('#techniques .carousel').replaceChildren(...techniques.map(createTechniqueCard))
 }
 
 function createToolCard({ name, description, image, fit }) {
@@ -29,13 +29,16 @@ function createToolCard({ name, description, image, fit }) {
 	return card
 }
 
-function createTechniqueCard({ name, icon, description }) {
+function createTechniqueCard({ name, description, color }, index) {
+	const number = String(index + 1).padStart(2, '0')
 	const card = document.createElement('article')
-	card.className = 'card'
+	card.className = 'technique-card'
+	card.style.setProperty('--tint', color)
 	card.innerHTML = `
-		<span class="icon">${icon}</span>
-		<h3>${name}</h3>
-		<p>${description}</p>`
+		<span class="label">Technique ${number}</span>
+		<h3>${name}.</h3>
+		<p>${description}</p>
+		<span class="number">${number}</span>`
 	return card
 }
 
