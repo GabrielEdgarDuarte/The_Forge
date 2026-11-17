@@ -26,7 +26,7 @@ function setupTheme() {
 
 function applyTheme(theme, button) {
 	document.documentElement.dataset.theme = theme
-	button.textContent = theme === 'dark' ? '☀️' : '🌙'
+	button.textContent = theme === 'dark' ? '☀' : '☾'
 }
 
 function setupHeatSlider() {

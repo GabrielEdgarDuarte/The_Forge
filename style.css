@@ -33,39 +33,46 @@ header {
 	z-index: 1;
 	display: flex;
 	align-items: center;
-	gap: 2rem;
-	padding: 1rem 2rem;
-	background: var(--surface);
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	gap: 1.75rem;
+	padding: 0.9rem max(2rem, calc((100% - 56rem) / 2));
+	background: color-mix(in srgb, var(--background) 85%, transparent);
+	border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+	backdrop-filter: blur(20px);
 
 	.logo {
-		font-size: 1.4rem;
-		font-weight: bold;
-		color: var(--accent);
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: var(--text);
 		text-decoration: none;
 	}
 
 	nav {
 		display: flex;
-		gap: 1.5rem;
+		gap: 1.75rem;
 		margin-left: auto;
 	}
 
 	nav a {
-		color: var(--text);
+		color: var(--muted);
+		font-size: 0.8rem;
 		text-decoration: none;
+		transition: color 0.2s;
 
 		&:hover {
-			color: var(--accent);
+			color: var(--text);
 		}
 	}
 
 	.theme-toggle {
-		padding: 0.3rem 0.6rem;
-		border: 1px solid var(--muted);
+		display: grid;
+		place-items: center;
+		width: 2.1rem;
+		height: 2.1rem;
+		border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
 		border-radius: 50%;
-		background: none;
-		font-size: 1.1rem;
+		background: color-mix(in srgb, var(--text) 8%, transparent);
+		color: var(--text);
+		font-size: 1rem;
 		cursor: pointer;
 	}
 }
@@ -263,6 +270,9 @@ footer {
 		padding: 1rem;
 
 		nav {
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0.5rem 1rem;
 			margin-left: 0;
 		}
 	}
